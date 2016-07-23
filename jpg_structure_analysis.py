@@ -648,18 +648,18 @@ for i in range(number_of_field_dir):
 if gpsLatitudeOffset and gpsLongitudeOffset:
 	offset = gpsLatitudeOffset + TIFF_header_offset + 1
 	gpsLatitude = str(int(jpg_data[offset:offset+4][::-1].encode('hex'), 16)) + "; "
-	offset += 4
+	offset += 8
 	gpsLatitude += str(int(jpg_data[offset:offset+4][::-1].encode('hex'), 16)) + "; "
-	offset += 4
+	offset += 8
 	gpsLatitude += str(int(jpg_data[offset:offset+4][::-1].encode('hex'), 16)) 
 	
 	print "\n\n[+] Success To Get GPSLatitude - ["+gpsLatitude+"]"
 	
 	offset = gpsLongitudeOffset + TIFF_header_offset + 1
 	gpsLongitude = str(int(jpg_data[offset:offset+4][::-1].encode('hex'), 16)) + "; "
-	offset += 4
+	offset += 8
 	gpsLongitude += str(int(jpg_data[offset:offset+4][::-1].encode('hex'), 16)) + "; "
-	offset += 4
+	offset += 8
 	gpsLongitude += str(int(jpg_data[offset:offset+4][::-1].encode('hex'), 16)) 
 	
 	print "[+] Success To Get GPSLongitude - ["+gpsLongitude+"]"
